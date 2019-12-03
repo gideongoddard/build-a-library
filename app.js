@@ -24,7 +24,6 @@ class Media {
     
     getAverageRating() {
       let sumRating = this._ratings.reduce( (a, b) => a + b, 0);
-      console.log(sumRating);
       let averageRating = Math.round((sumRating / this._ratings.length) * 10) / 10;
       return averageRating;
     }
@@ -92,3 +91,37 @@ class Media {
       return this._songs;
     }
   }
+  
+  // Creating an instance of the Book class
+  const historyOfEverything = new Book('Bill Bryson', 'A Short History of Nearly Everything', 544);
+  
+  // Checking out the book
+  historyOfEverything.toggleCheckOutStatus();
+  
+  // Logging the details of the book to verify its checkout status
+  console.log(historyOfEverything);
+  
+  // Adding ratings to the book
+  historyOfEverything.addRating(4);
+  historyOfEverything.addRating(5);
+  historyOfEverything.addRating(5);
+  
+  // Logging the average rating of the book to verify averages
+  console.log(historyOfEverything.getAverageRating());
+  
+  // Creating an instance of the Movie class
+  const speed = new Movie('Jan de Bont', 'Speed', 116);
+  
+  // Checking out the movie
+  speed.toggleCheckOutStatus();
+  
+  // Logging the details of the movie to verify its checkout status
+  console.log(speed);
+  
+  // Adding ratings to the movie
+  speed.addRating(1);
+  speed.addRating(1);
+  speed.addRating(5);
+  
+  // Logging the average rating of the movie to verify averages
+  console.log(speed.getAverageRating());
