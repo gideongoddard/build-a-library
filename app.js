@@ -18,11 +18,13 @@ class Media {
       return this._ratings;
     }
     
+    set isCheckedOut(checkOutStatus) {
+      this._isCheckedOut = checkOutStatus;
+    }
+    
     getAverageRating() {
-      let sumRating =0;
-      for (let i = 0; i < this._ratings.length; i++) {
-        sumRating += this._ratings[i];
-      }
+      let sumRating = this._ratings.reduce( (a, b) => a + b, 0);
+      console.log(sumRating);
       let averageRating = Math.round((sumRating / this._ratings.length) * 10) / 10;
       return averageRating;
     }
@@ -90,4 +92,3 @@ class Media {
       return this._songs;
     }
   }
-  
